@@ -1,6 +1,6 @@
 source "http://rubygems.org"
 
-gem 'emblem-source', '~>0.3.16'
+gem 'emblem-source', '~>0.4.0'
 gem 'handlebars_assets', '~>0.16'
 
 group :development do

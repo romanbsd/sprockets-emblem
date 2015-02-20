@@ -1,3 +1,4 @@
+require 'handlebars_assets'
 require 'sprockets/emblem'
 
 if defined?(Rails) and defined?(Rails::Railtie)
