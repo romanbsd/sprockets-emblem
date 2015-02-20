@@ -19,7 +19,7 @@ GEM
       multi_json (>= 1.7.5, < 2.0)
       nokogiri (~> 1.6.3)
       oauth2
-    handlebars_assets (0.19)
+    handlebars_assets (0.18)
       execjs (>= 1.2.9)
       multi_json
       sprockets (>= 2.0.3)
@@ -76,7 +76,7 @@ PLATFORMS
 DEPENDENCIES
   bundler (~> 1.0)
   emblem-source (~> 0.4.0)
-  handlebars_assets (~> 0.16)
+  handlebars_assets (~> 0.16, < 0.19)
   jeweler (~> 2.0.1)
   rdoc (~> 3.12)
   rspec (~> 2.14.0)
