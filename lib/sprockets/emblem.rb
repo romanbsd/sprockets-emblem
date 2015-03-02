@@ -16,7 +16,7 @@ module Sprockets
     end
 
     def evaluate(scope, locals, &block)
-      compiled_hbs = context.call('Emblem.precompile', hbs_variant, data)
+      compiled_hbs = context.call('Emblem.precompile', HandlebarsVariant, data)
       "Handlebars.template(#{compiled_hbs});"
     end
 
@@ -29,15 +29,19 @@ module Sprockets
       HandlebarsAssets::Handlebars.send :source
     end
 
-    def hbs_variant
-      @hbs_variant ||= begin
-        'Handlebars'.tap do |hbs|
-          hbs.define_singleton_method(:encode_json) { |encoder| hbs }
-        end
-      end
+    def prepare
     end
 
-    def prepare
+    module HandlebarsVariant
+      VARIANT = 'Handlebars'.freeze
+
+      def self.to_json(options = nil)
+        VARIANT
+      end
+
+      def self.encode_json(encoder = nil)
+        VARIANT
+      end
     end
   end
 end
